@@ -1,0 +1,1 @@
+console.log("Agile CI application is running");
