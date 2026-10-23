@@ -1,4 +1,4 @@
-name: CI Pipeline
+name: CI Build
 
 on:
   push:
@@ -21,21 +21,5 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build stage
+      - name: Run application
         run: node app.js
-
-  test:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Test stage
-        run: echo "Tests passed"
-
-  release:
-    needs: test
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Release gate
-        run: echo "Build and tests passed - ready for release"
